@@ -444,24 +444,24 @@ const char helpTxt[1024] = "This is how you can use s-c chatroom:\n\t QUIT: quit
 
 启动服务器和三个客户端，此处预先设定好了服务器地址和端口号。服务器和客户端输出带时间戳的对应日志信息。
 
-![image-20221022232524249](D:\file\大三上\计算机网络\实验\实验一\report.assets\image-20221022232524249.png)
+![image-20221022232524249](D:\file\大三上\计算机网络\computer-network\lab1\report\report.assets\image-20221022232524249.png)
 
 测试私聊功能，由零号客户端向二号客户端发送信息。
 
-![image-20221022232813711](D:\file\大三上\计算机网络\实验\实验一\report.assets\image-20221022232813711.png)
+![image-20221022232813711](D:\file\大三上\计算机网络\computer-network\lab1\report\report.assets\image-20221022232813711.png)
 
 测试广播功能，由一号客户端向所有用户广播消息。
 
-![image-20221022233013248](D:\file\大三上\计算机网络\实验\实验一\report.assets\image-20221022233013248.png)
+![image-20221022233013248](D:\file\大三上\计算机网络\computer-network\lab1\report\report.assets\image-20221022233013248.png)
 
 测试列出客户端功能。
 
-![image-20221022233228939](D:\file\大三上\计算机网络\实验\实验一\report.assets\image-20221022233228939.png)
+![image-20221022233228939](D:\file\大三上\计算机网络\computer-network\lab1\report\report.assets\image-20221022233228939.png)
 
 测试踢人功能。
 
-![image-20221022233413022](D:\file\大三上\计算机网络\实验\实验一\report.assets\image-20221022233413022.png)
+![image-20221022233413022](D:\file\大三上\计算机网络\computer-network\lab1\report\report.assets\image-20221022233413022.png)
 
 测试显示帮助功能
 
-![image-20221022233457920](D:\file\大三上\计算机网络\实验\实验一\report.assets\image-20221022233457920.png)
+![image-20221022233457920](D:\file\大三上\计算机网络\computer-network\lab1\report\report.assets\image-20221022233457920.png)
