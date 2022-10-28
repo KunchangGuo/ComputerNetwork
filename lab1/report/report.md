@@ -14,7 +14,7 @@
 
 程序流程如下图所示。
 
-![image-20221022230157139](\report.assets\image-20221022230157139.png)
+![image-20221022230157139](report.assets/image-20221022230157139.png)
 
 ### 二、 协议设计实现
 
@@ -404,7 +404,7 @@ string Util::currentTime()
 
 #### 3.4 Config配置
 
-config.h中配置重要的参数，指令格式等
+`config.h`中配置重要的参数，指令格式等
 
 ```
 #define _WINSOCK_DEPRECATED_NO_WARNINGS 1	// enable deprecated functions
@@ -444,24 +444,24 @@ const char helpTxt[1024] = "This is how you can use s-c chatroom:\n\t QUIT: quit
 
 启动服务器和三个客户端，此处预先设定好了服务器地址和端口号。服务器和客户端输出带时间戳的对应日志信息。
 
-![image-20221022232524249](\report.assets\image-20221022232524249.png)
+![image-20221022232524249](report.assets/image-20221022232524249.png)
 
 测试私聊功能，由零号客户端向二号客户端发送信息。
 
-![image-20221022232813711](\report.assets\image-20221022232813711.png)
+![image-20221022232813711](report.assets/image-20221022232813711.png)
 
 测试广播功能，由一号客户端向所有用户广播消息。
 
-![image-20221022233013248](\report.assets\image-20221022233013248.png)
+![image-20221022233013248](report.assets/image-20221022233013248.png)
 
 测试列出客户端功能。
 
-![image-20221022233228939](\report.assets\image-20221022233228939.png)
+![image-20221022233228939](report.assets/image-20221022233228939.png)
 
 测试踢人功能。
 
-![image-20221022233413022](\report.assets\image-20221022233413022.png)
+![image-20221022233413022](report.assets/image-20221022233413022.png)
 
 测试显示帮助功能
 
-![image-20221022233457920](\report.assets\image-20221022233457920.png)
+![image-20221022233457920](report.assets/image-20221022233457920.png)
