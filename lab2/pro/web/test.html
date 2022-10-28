@@ -1,0 +1,127 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab2Test</title>
+    <style>
+        /* set background picture */
+        body{
+            background: url("src/maple-background.jfif");
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        /* card */
+        .card{
+            display: grid;
+            grid-template-rows: 50% auto;
+            grid-template-columns: 50% auto;
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translate(-50%,50%);
+            width: 1000px;
+            padding: 50px;
+            background: rgba(231, 74, 17, 0.4);
+            box-sizing: border-box;
+            box-shadow: 0px 15px 25px rgba(239, 12, 12, 0.1);
+            border-radius: 15px;
+        }
+        .card .left{
+            margin-left: 75px;
+        }
+        .card .logo{
+            margin-left: 150px;
+            width: 275px;
+            height: 250px;
+            background: url("src/502.png");
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .card h2 {
+            color: #e9dfa0;
+        }
+        .card .right {
+            ;
+        }
+        .card .right .info{
+            margin-top: 30px;
+            margin-left: 70px;
+            margin-right: 75px;
+            color: #e9dfa0;
+        }
+        .card .plain_text{
+            color: #e9dfa0;
+            font-family: sans-serif;
+            font-size: 18px;
+            line-height: 50px;
+        }
+        .card .inputbox{
+            position: relative;
+        }
+        .card input{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+        .card input label{
+            position: relative;
+            top: 0px;
+            left: 0px;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+        }
+        .card input[type="Submit"]
+        {
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #fff;
+            background: rgba(199, 54, 10, 0.5);
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+<!--    left part-->
+    <div class="left">
+<!--        poem-->
+        <p class="plain_text">
+            To see a world in a grain of sand,<br>
+            And a heaven in a wild flower,<br>
+            Hold infinity in the palm of your hand,<br>
+            And eternity in an hour.
+        </p>
+<!--        form-->
+        <form id="form1" method="post" action="feedback.php">
+            <input type="text" name="text">
+            <input type="submit" name="submit" value="Share with us">
+        </form>
+    </div>
+<!--    right part-->
+    <div class="right">
+<!--        personal info-->
+        <div class="info">
+            <p>专业： 计算机科学与技术</p>
+            <p>学号： 2012522</p>
+            <p>姓名： 郭坤昌</p>
+        </div>
+<!--        logo-->
+        <div class="logo"></div>
+    </div>
+</div>
+</body>
+</html>
