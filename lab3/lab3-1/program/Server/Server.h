@@ -10,8 +10,9 @@ class Server {
 
 private:
 #define PORT 8888
-#define SEND_BUF_SIZE 1024
-#define RECV_BUF_SIZE 1024
+#define IP_ADDR ("127.0.0.100")
+#define SEND_BUF_SIZE 10240
+#define RECV_BUF_SIZE 10240
 
     int state;
     enum State {
@@ -19,7 +20,6 @@ private:
         LISTEN,
         SYN_RCVD,
         ESTABLISHED,
-        CLOSED_WAIT,
         LAST_ACK
     };
 
@@ -43,11 +43,15 @@ private:
     unsigned int recv_file_size;   // file length to be received
     unsigned int acc_recv_size = 0; // accumulated received size
     fstream dump_file;  // file to be received
+    double duration;
+    double bandwidth;
+    int acc_corrupt;
 
     void set_timeout(int sec, int usec);    // set timeout for recvfrom()
     void set_retry_count(int count);    // set retry count for retransmission
     bool stop_and_wait_send_and_recv(u8 *data, u16 data_len, PacketManager::PacketType packet_type);    // stop and wait protocol for send and recv
     void parse_recv_packet();    // parse packet received
+    void print_log();   // print log
 
     void init();    // initialize server
     void start();   // start server process

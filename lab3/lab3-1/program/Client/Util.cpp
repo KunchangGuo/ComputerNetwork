@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <ctime>
+//#include "windows.h"
 
 string Util::curr_time(int time_stamp_type) {
     using namespace chrono;
@@ -11,7 +12,7 @@ string Util::curr_time(int time_stamp_type) {
     tm* now_tm = localtime(&now_time_t);
 
     char buffer[128] = {0};
-    strftime(buffer, 128, "%Y-%m-%d %H:%M:%S", now_tm);
+    strftime(buffer, 128, "%H:%M:%S", now_tm);
 
     ostringstream ss;
     ss.fill('0');
@@ -47,12 +48,23 @@ string Util::curr_time(int time_stamp_type) {
     return ss.str();
 }
 
-unsigned int Util::time_span(chrono::high_resolution_clock::time_point start)
+double Util::time_span(chrono::high_resolution_clock::time_point start, int time_stamp_type)
 {
     using namespace chrono;
     high_resolution_clock::time_point end = high_resolution_clock::now();
     duration<double> time_span_milliseconds = duration_cast<duration<double>>(end - start);
-    return (unsigned int)(time_span_milliseconds.count() * 1000);
+    if(time_stamp_type == MILLISECOND){
+        return time_span_milliseconds.count() * 1000;
+    }
+    else if(time_stamp_type == MICROSECOND){
+        return time_span_milliseconds.count() * 1000000;
+    }
+    else if(time_stamp_type == NANOSECOND){
+        return time_span_milliseconds.count() * 1000000000;
+    }
+    else{
+        return time_span_milliseconds.count();
+    }
 }
 
 vector<string> Util::get_files(const string& dir_path){
@@ -111,4 +123,31 @@ bool Util::dump_data(std::fstream *file, char *data, unsigned short data_len) {
     }
     file->write((char *)data, data_len);
     return true;
+}
+
+void Util::log(Util::INFO_TYPE type, std::string msg) {
+    switch(type) {
+        case Util::INFO_TYPE::STATE: {
+            string new_msg = curr_time() + " [STATE] " + msg;
+//            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_GREEN);
+            cout << new_msg << endl;
+            break;
+        }
+        case Util::INFO_TYPE::PLAIN: {
+            string new_msg = curr_time() + " [PLAIN] " + msg;
+//            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE);
+            cout << new_msg << endl;
+            break;
+        }
+        case Util::INFO_TYPE::EXCPT: {
+            string new_msg = curr_time() + " [EXCPT] " + msg;
+//            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
+            cout << new_msg << endl;
+            break;
+        }
+        default: {
+            cout << "No matching info_type" <<endl;
+            return;
+        }
+    }
 }

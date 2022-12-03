@@ -129,7 +129,7 @@ u32 PacketManager::get_ack_num(UDP_Packet *packet) {
 }
 
 string PacketManager::to_str(UDP_Packet *packet) {
-    string str = "Packet: ";
+    string str = "PKT: ";
     str += "seq_num: " + to_string(packet->header.seq_num) + ", ";
     str += "ack_num: " + to_string(packet->header.ack_num) + ", ";
     str += "data_len: " + to_string(packet->header.length) + ", ";
